@@ -7,7 +7,9 @@ defmodule GithubSearchWeb.GithubSearchLive do
 
   def render(assigns) do
     ~H"""
-    <h1>Hey</h1>
+    <h1 class="text-3xl">
+      Hello world!
+    </h1>
     """
   end
 end
