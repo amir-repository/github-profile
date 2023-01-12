@@ -1,60 +1,62 @@
-<main class="p-6">
+<main class="p-6 text-white">
   <header>
     <div class="flex justify-between items-center">
-      <h1 class="font-bold text-3xl text-white">devfinder</h1>
+      <h1 class="font-bold text-3xl">devfinder</h1>
       <div class="flex gap-4 items-center">
-        <h2 class="text-sm font-bold uppercase text-white">Light</h2>
+        <h2 class="text-sm font-bold uppercase">Light</h2>
         <img src="/images/icon-sun.svg" alt="" />
       </div>
     </div>
     <div class="mt-9 flex justify-between items-center bg-[#1F2A48] p-2 rounded-2xl">
       <div class="flex items-center">
         <img class="mr-2 ml-2" src="/images/icon-search.svg" alt="" />
-        <input class="bg-[#1F2A48] text-white w-full border-none border-transparent focus:border-transparent focus:ring-0" type="text" placeholder="Search Github Username..."/>
+        <input class="bg-[#1F2A48] w-full border-none border-transparent focus:border-transparent focus:ring-0" type="text" placeholder="Search Github Username..."/>
       </div>
-      <button class="bg-[#0079FC] ml-2 py-4 px-5 text-white font-bold rounded-2xl">Search</button>
+      <button class="bg-[#0079FC] ml-2 py-4 px-5 font-bold rounded-2xl">Search</button>
     </div>
   </header>
-  <main>
-    <div class="profile">
-      <img src="/images/image-user-placeholder.png" alt="" />
-      <div class="profile-desc">
-        <h2>The Octocat</h2>
-        <p>@octocat</p>
-        <p>Joined 25 Jan 2011</p>
+  <main class="bg-[#1F2A48] rounded-2xl mt-5 p-6">
+    <div class="profile mt-2 flex justify-start items-center gap-4">
+      <img src="/images/image-user-placeholder.png" alt="" class="w-[96px]"/>
+      <div class="profile-desc flex flex-col gap-1">
+        <div>
+          <h2 class="text-md">The Octocat</h2>
+          <p class="text-sm">@octocat</p>
+        </div>
+        <p class="text-sm">Joined 25 Jan 2011</p>
       </div>
     </div>
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex magni, perferendis distinctio ducimus eum minus expedita rem accusamus id eaque.
+    <p class="text-sm mt-8">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Ex magni, perferendis distinctio ducimus.
     </p>
-    <div class="social">
+    <div class="text-sm mt-8 flex justify-between bg-[#141C30] p-5 rounded-2xl">
       <div>
         <h2>Repos</h2>
-        <h3>8</h3>
+        <h3 class="text-lg font-bold">8</h3>
       </div>
       <div>
         <h2>Followers</h2>
-        <h3>3938</h3>
+        <h3 class="text-lg font-bold">3938</h3>
       </div>
       <div>
         <h2>Following</h2>
-        <h3>8</h3>
+        <h3 class="text-lg font-bold">8</h3>
       </div>
     </div>
-    <div class="link">
-      <div>
+    <div class="mt-8 flex flex-col gap-3">
+      <div class="flex gap-5 justify-start items-center">
         <img src="/images/icon-location.svg" alt="" />
         <h3>San Francisco</h3>
       </div>
-      <div>
+      <div class="flex gap-3 justify-start items-center">
         <img src="/images/icon-website.svg" alt="" />
         <h3><a href="https://github.blog.svg">https://github.blog</a></h3>
       </div>
-      <div>
+      <div class="flex gap-3 justify-start items-center">
         <img src="/images/icon-twitter.svg" alt="" />
         <h3>Not Available</h3>
       </div>
-      <div>
+      <div class="flex gap-3 justify-start items-center">
         <img src="/images/icon-company.svg" alt="" />
         <h3>@github</h3>
       </div>
