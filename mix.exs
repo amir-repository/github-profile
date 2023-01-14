@@ -50,7 +50,8 @@ defmodule GithubSearch.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
-      {:httpoison, "~> 1.8"}
+      {:httpoison, "~> 1.8"},
+      {:timex, "~> 3.7"}
     ]
   end
 

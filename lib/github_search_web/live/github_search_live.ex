@@ -22,7 +22,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
   def handle_event("search_username", %{"username" => username}, socket) do
     user = user_search(username)
     user = Map.put(user, :username, username)
-    IO.inspect(user)
+    IO.inspect(user.created_at)
     {:noreply, assign(socket, :user, user)}
   end
 
