@@ -2,11 +2,26 @@ defmodule GithubSearchWeb.GithubSearchLive do
   use GithubSearchWeb, :live_view
 
   def mount(_params, _session, socket) do
-    {:ok, assign(socket, :user, [])}
+    {:ok,
+     assign(socket, :user, %{
+       name: "name",
+       username: "username",
+       avatar_url: "",
+       created_at: "",
+       bio: "bio",
+       public_repos: 1,
+       followers: 1,
+       following: 2,
+       location: "",
+       blog: "",
+       twitter: "",
+       github: ""
+     })}
   end
 
   def handle_event("search_username", %{"username" => username}, socket) do
     user = user_search(username)
+    user = Map.put(user, :username, username)
     IO.inspect(user)
     {:noreply, assign(socket, :user, user)}
   end
@@ -18,7 +33,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
   end
 
   defp decode_json(json) do
-    {:ok, result} = Jason.decode(json)
+    {:ok, result} = Jason.decode(json, keys: :atoms)
     result
   end
 end
