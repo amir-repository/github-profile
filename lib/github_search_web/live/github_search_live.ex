@@ -4,18 +4,18 @@ defmodule GithubSearchWeb.GithubSearchLive do
   def mount(_params, _session, socket) do
     {:ok,
      assign(socket, :user, %{
-       name: "name",
-       username: "username",
-       avatar_url: "",
-       created_at: "",
-       bio: "bio",
-       public_repos: 0,
-       followers: 0,
-       following: 0,
-       location: "",
-       blog: "",
-       twitter: "",
-       github: ""
+       name: nil,
+       username: nil,
+       avatar_url: nil,
+       created_at: nil,
+       bio: nil,
+       public_repos: nil,
+       followers: nil,
+       following: nil,
+       location: nil,
+       blog: nil,
+       twitter_username: nil,
+       github: nil
      })}
   end
 
