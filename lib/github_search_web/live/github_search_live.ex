@@ -22,7 +22,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
   def handle_event("search_username", %{"username" => username}, socket) do
     user = user_search(username)
     user = Map.put(user, :username, username)
-    IO.inspect(user.created_at)
+    user = %{user | created_at: format_time(user.created_at)}
     {:noreply, assign(socket, :user, user)}
   end
 
@@ -35,5 +35,12 @@ defmodule GithubSearchWeb.GithubSearchLive do
   defp decode_json(json) do
     {:ok, result} = Jason.decode(json, keys: :atoms)
     result
+  end
+
+  defp format_time(strftime_str) do
+    {:ok, datetime} = Timex.parse(strftime_str, "{ISO:Extended}")
+
+    datetime
+    |> Timex.format!("{D} {Mshort} {YYYY}")
   end
 end
