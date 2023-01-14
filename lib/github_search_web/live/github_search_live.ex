@@ -20,8 +20,10 @@ defmodule GithubSearchWeb.GithubSearchLive do
   end
 
   def handle_event("search_username", %{"username" => username}, socket) do
-    user = user_search(username)
-    user = Map.put(user, :username, username)
+    user =
+      user_search(username)
+      |> Map.put(:username, username)
+
     user = %{user | created_at: format_time(user.created_at)}
     {:noreply, assign(socket, :user, user)}
   end
@@ -42,5 +44,9 @@ defmodule GithubSearchWeb.GithubSearchLive do
 
     datetime
     |> Timex.format!("{D} {Mshort} {YYYY}")
+  end
+
+  def format_time_on_map(map) do
+    %{map | created_at: format_time(map.time)}
   end
 end
