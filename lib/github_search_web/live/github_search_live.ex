@@ -54,7 +54,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
       "light" ->
         case data do
           nil -> "#A0B2CE"
-          "" -> "A0B2CE"
+          "" -> "#A0B2CE"
           _ -> "#5E6D85"
         end
     end
