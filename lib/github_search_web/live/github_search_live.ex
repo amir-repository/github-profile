@@ -15,7 +15,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
        location: nil,
        blog: nil,
        twitter_username: nil,
-       github: nil
+       company: nil
      })}
   end
 
@@ -24,6 +24,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
       user_search(username)
       |> Map.put(:username, username)
 
+    IO.inspect(user)
     user = %{user | created_at: format_time(user.created_at)}
     {:noreply, assign(socket, :user, user)}
   end
