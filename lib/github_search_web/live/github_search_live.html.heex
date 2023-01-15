@@ -1,9 +1,13 @@
-<div class={@theme}>
+<div
+  x-data="{dark_theme: false}"
+  x-effect="dark_theme ? document.body.style.backgroundColor='#141C30' : document.body.style.backgroundColor='#F5F8FF'"
+  class={@theme}
+>
   <main class="p-6 md:w-[520px] lg:w-[720px] m-auto bg-[#F5F8FF] text-[#23262E] dark:bg-[#141C30] dark:text-[#FDFFFF]">
     <header>
       <div class="flex justify-between items-center">
         <h1 class="font-bold text-3xl ">devfinders</h1>
-        <div phx-click="toggle_theme">
+        <div @click="dark_theme = !dark_theme" phx-click="toggle_theme">
           <div :if={@theme == "dark"} class="flex gap-4 items-center p-4">
             <h2 class="text-sm font-bold uppercase">Light</h2>
             <img src="/images/icon-sun.svg" alt="" />
