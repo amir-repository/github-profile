@@ -1,11 +1,17 @@
 <section class="">
   <main class="p-6 text-white md:w-[520px] lg:w-[720px] m-auto ">
-    <header>
+    <header class="dark">
       <div class="flex justify-between items-center">
-        <h1 class="font-bold text-3xl">devfinder</h1>
-        <div phx-click="toggle_theme" class="flex gap-4 items-center p-4">
-          <h2 class="text-sm font-bold uppercase">Light</h2>
-          <img src="/images/icon-sun.svg" alt="" />
+        <h1 class="font-bold text-3xl dark:text-pink-200">devfinder</h1>
+        <div phx-click="toggle_theme">
+          <div :if={@dark_theme} class="flex gap-4 items-center p-4">
+            <h2 class="text-sm font-bold uppercase">Light</h2>
+            <img src="/images/icon-sun.svg" alt="" />
+          </div>
+          <div :if={!@dark_theme} class="flex gap-4 items-center p-4">
+            <h2 class="text-sm font-bold uppercase">Dark</h2>
+            <img src="/images/icon-moon.svg" alt="" />
+          </div>
         </div>
       </div>
       <form phx-submit="search_username">
