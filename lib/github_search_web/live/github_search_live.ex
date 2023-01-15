@@ -16,7 +16,14 @@ defmodule GithubSearchWeb.GithubSearchLive do
        blog: nil,
        twitter_username: nil,
        company: nil
-     })}
+     })
+     |> assign(:dark_theme, true)}
+  end
+
+  def handle_event("toggle_theme", _params, socket) do
+    socket = assign(socket, :dark_theme, !socket.assigns.dark_theme)
+    IO.inspect(socket.assigns.dark_theme)
+    {:noreply, socket}
   end
 
   def handle_event("search_username", %{"username" => username}, socket) do
@@ -24,7 +31,6 @@ defmodule GithubSearchWeb.GithubSearchLive do
       user_search(username)
       |> Map.put(:username, username)
 
-    IO.inspect(user)
     user = %{user | created_at: format_time(user.created_at)}
     {:noreply, assign(socket, :user, user)}
   end
