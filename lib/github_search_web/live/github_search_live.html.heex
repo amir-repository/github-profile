@@ -16,7 +16,7 @@
           </div>
         </div>
         <form phx-submit="search_username">
-          <div class="mt-9 flex justify-between items-center bg-[#FEFEFE] p-2 rounded-2xl shadow-2xl dark:bg-[#1F2A48]">
+          <div class="mt-9 flex justify-between items-center bg-[#FEFEFE] p-2 rounded-2xl shadow-xl dark:bg-[#1F2A48]">
             <div class="flex items-center">
               <img class="ml-2" src="/images/icon-search.svg" alt="" />
               <input
@@ -37,7 +37,7 @@
       </header>
       <main
         :if={@user.name}
-        class="bg-[#FEFEFE] rounded-2xl mt-5 p-6 lg:flex lg:items-start lg:gap-6 dark:bg-[#1F2A48]"
+        class="bg-[#FEFEFE] rounded-2xl mt-5 p-6 shadow-xl lg:flex lg:items-start lg:gap-6 dark:bg-[#1F2A48] "
       >
         <img src={@user.avatar_url} alt="" class="hidden w-[96px] lg:block rounded-full" />
         <section>
