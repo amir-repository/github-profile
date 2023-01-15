@@ -42,11 +42,21 @@ defmodule GithubSearchWeb.GithubSearchLive do
     {:noreply, assign(socket, :user, user)}
   end
 
-  defp icon_fill(data) do
-    case data do
-      nil -> "#A0B2CE"
-      "" -> "A0B2CE"
-      _ -> "#5E6D85"
+  defp icon_fill(data, theme) do
+    case theme do
+      "dark" ->
+        case data do
+          nil -> "#5E6D85"
+          "" -> "5E6D85"
+          _ -> "#A0B2CE"
+        end
+
+      "light" ->
+        case data do
+          nil -> "#A0B2CE"
+          "" -> "A0B2CE"
+          _ -> "#5E6D85"
+        end
     end
   end
 
