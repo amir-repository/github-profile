@@ -42,6 +42,14 @@ defmodule GithubSearchWeb.GithubSearchLive do
     {:noreply, assign(socket, :user, user)}
   end
 
+  defp icon_fill(data) do
+    case data do
+      nil -> "#A0B2CE"
+      "" -> "A0B2CE"
+      _ -> "#5E6D85"
+    end
+  end
+
   defp user_search(username) do
     api_url = "https://api.github.com/users/"
     {:ok, result} = HTTPoison.get(api_url <> username)
