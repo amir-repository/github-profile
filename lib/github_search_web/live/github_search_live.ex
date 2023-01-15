@@ -38,6 +38,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
       |> Map.put(:username, username)
 
     user = %{user | created_at: format_time(user.created_at)}
+    IO.inspect(user)
     {:noreply, assign(socket, :user, user)}
   end
 
