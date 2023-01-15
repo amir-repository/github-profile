@@ -17,13 +17,19 @@ defmodule GithubSearchWeb.GithubSearchLive do
        twitter_username: nil,
        company: nil
      })
-     |> assign(:dark_theme, true)}
+     |> assign(:theme, "light")}
   end
 
   def handle_event("toggle_theme", _params, socket) do
-    socket = assign(socket, :dark_theme, !socket.assigns.dark_theme)
-    IO.inspect(socket.assigns.dark_theme)
-    {:noreply, socket}
+    case socket.assigns.theme do
+      "dark" ->
+        socket = assign(socket, :theme, "light")
+        {:noreply, socket}
+
+      "light" ->
+        socket = assign(socket, :theme, "dark")
+        {:noreply, socket}
+    end
   end
 
   def handle_event("search_username", %{"username" => username}, socket) do
