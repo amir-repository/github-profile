@@ -92,7 +92,16 @@ defmodule GithubSearchWeb.GithubSearchLive do
     result
   end
 
-  defp format_time(strftime_str) do
+  @doc """
+  Change complete time format from github API `2012-02-05T14:53:26Z` to expected UI time format `5 Feb 2012`
+
+  ## Example
+      iex> date_github_api = "2012-02-05T14:53:26Z"
+      iex> GithubSearchWeb.GithubSearchLive.format_time(date_github_api)
+      "5 Feb 2012"
+
+  """
+  def format_time(strftime_str) do
     {:ok, datetime} = Timex.parse(strftime_str, "{ISO:Extended}")
 
     datetime
