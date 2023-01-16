@@ -42,7 +42,20 @@ defmodule GithubSearchWeb.GithubSearchLive do
     {:noreply, assign(socket, :user, user)}
   end
 
-  defp icon_fill(data, theme) do
+  @doc """
+  change the icon fill color based on selected theme
+
+  ## Example
+      iex> theme = "dark"
+      iex> data = nil
+      iex> GithubSearchWeb.GithubSearchLive.icon_fill(data, theme)
+      "#5E6D85"
+      iex> data = "Indonesia"
+      iex> GithubSearchWeb.GithubSearchLive.icon_fill(data, theme)
+      "#A0B2CE"
+  """
+
+  def icon_fill(data, theme) do
     case theme do
       "dark" ->
         case data do

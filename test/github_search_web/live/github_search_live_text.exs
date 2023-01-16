@@ -1,5 +1,6 @@
 defmodule GithubSearchWeb.GithubSearchLiveTest do
   use GithubSearchWeb.ConnCase, async: true
+  doctest GithubSearchWeb.GithubSearchLive
 
   import Phoenix.LiveViewTest
 
