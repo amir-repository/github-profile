@@ -15,4 +15,16 @@ defmodule GithubSearchWeb.GithubSearchLiveTest do
     assert view |> element("#toggle_theme") |> render_click() =~ "icon-moon.svg"
     assert view |> element("#toggle_theme") |> render_click() =~ "class=\"dark\""
   end
+
+  test "Search github profile by username", %{conn: conn} do
+    {:ok, view, _html} = live(conn, "/")
+
+    username = "a"
+
+    view
+    |> form("form", %{username: username})
+    |> render_submit()
+
+    assert has_element?(view, "#username", username)
+  end
 end
