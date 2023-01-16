@@ -43,7 +43,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
   end
 
   @doc """
-  change the icon fill color based on selected theme
+  Change the icon fill color based on selected theme
 
   ## Example
       iex> theme = "dark"
@@ -54,7 +54,6 @@ defmodule GithubSearchWeb.GithubSearchLive do
       iex> GithubSearchWeb.GithubSearchLive.icon_fill(data, theme)
       "#A0B2CE"
   """
-
   def icon_fill(data, theme) do
     case theme do
       "dark" ->
@@ -79,7 +78,16 @@ defmodule GithubSearchWeb.GithubSearchLive do
     decode_json(result.body)
   end
 
-  defp decode_json(json) do
+  @doc """
+  Change json data format to elixir map with atom key
+
+  ## Example
+      iex> json = ~s({"location": "Indonesia"})
+      iex> GithubSearchWeb.GithubSearchLive.decode_json(json)
+      %{location: "Indonesia"}
+  """
+
+  def decode_json(json) do
     {:ok, result} = Jason.decode(json, keys: :atoms)
     result
   end
