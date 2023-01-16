@@ -86,7 +86,6 @@ defmodule GithubSearchWeb.GithubSearchLive do
       iex> GithubSearchWeb.GithubSearchLive.decode_json(json)
       %{location: "Indonesia"}
   """
-
   def decode_json(json) do
     {:ok, result} = Jason.decode(json, keys: :atoms)
     result
@@ -106,9 +105,5 @@ defmodule GithubSearchWeb.GithubSearchLive do
 
     datetime
     |> Timex.format!("{D} {Mshort} {YYYY}")
-  end
-
-  def format_time_on_map(map) do
-    %{map | created_at: format_time(map.time)}
   end
 end
