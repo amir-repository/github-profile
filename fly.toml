@@ -1,6 +1,6 @@
-# fly.toml file generated for cold-water-9833 on 2023-01-17T17:15:38+07:00
+# fly.toml file generated for github-search-profile on 2023-01-17T18:15:40+07:00
 
-app = "cold-water-9833"
+app = "github-search-profile"
 kill_signal = "SIGTERM"
 kill_timeout = 5
 processes = []
@@ -9,7 +9,7 @@ processes = []
   release_command = "/app/bin/migrate"
 
 [env]
-  PHX_HOST = "cold-water-9833.fly.dev"
+  PHX_HOST = "github-search-profile.fly.dev"
   PORT = "8080"
 
 [experimental]
