@@ -1,4 +1,7 @@
 defmodule GithubSearchWeb.Helper do
+  @behaviour GithubSearchWeb.Behaviour.GithubUsersBehaviour
+
+  @impl GithubSearchWeb.Behaviour.GithubUsersBehaviour
   def user_search(username) do
     api_url = "https://api.github.com/users/"
     {:ok, result} = HTTPoison.get(api_url <> username)

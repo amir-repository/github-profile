@@ -1,6 +1,8 @@
 defmodule GithubSearchWeb.GithubSearchLive do
   use GithubSearchWeb, :live_view
-  import GithubSearchWeb.Helper
+  alias GithubSearchWeb.Helper
+
+  def helper, do: Application.get_env(:github_search, :helper)
 
   def mount(_params, _session, socket) do
     {:ok,
@@ -35,10 +37,10 @@ defmodule GithubSearchWeb.GithubSearchLive do
 
   def handle_event("search_username", %{"username" => username}, socket) do
     user =
-      user_search(username)
+      helper().user_search(username)
       |> Map.put(:username, username)
 
-    user = %{user | created_at: format_time(user.created_at)}
+    user = %{user | created_at: helper().format_time(user.created_at)}
     {:noreply, assign(socket, :user, user)}
   end
 end
