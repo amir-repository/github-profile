@@ -1,13 +1,14 @@
 defmodule GithubSearchWeb.HelperTest do
   use ExUnit.Case, async: true
-  # 1. Import Mox
+
   import Mox
-  # 2. setup fixtures
+
+  # Make sure mocks are verified when the test exits
   setup :verify_on_exit!
 
-  # test ":ok on 200" do
-  #   expect(HTTPoison.BaseMock, :get, fn _ -> {:ok, "What a guy!"} end)
+  test "Get user info based on given username" do
+    expect(GithubUsersBehaviourMock, :user_search, fn "a" -> %{username: "a"} end)
 
-  #   assert {:ok, _} = MyModule.get_username("twinkie")
-  # end
+    assert %{username: "a"} = GithubUsersBehaviourMock.user_search("a")
+  end
 end
