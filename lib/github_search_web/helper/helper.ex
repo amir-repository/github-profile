@@ -13,7 +13,7 @@ defmodule GithubSearchWeb.Helper do
 
   ## Example
       iex> json = ~s({"location": "Indonesia"})
-      iex> GithubSearchWeb.GithubSearchLive.decode_json(json)
+      iex> GithubSearchWeb.Helper.decode_json(json)
       %{location: "Indonesia"}
   """
   def decode_json(json) do
@@ -26,7 +26,7 @@ defmodule GithubSearchWeb.Helper do
 
   ## Example
       iex> date_github_api = "2012-02-05T14:53:26Z"
-      iex> GithubSearchWeb.GithubSearchLive.format_time(date_github_api)
+      iex> GithubSearchWeb.Helper.format_time(date_github_api)
       "5 Feb 2012"
 
   """
@@ -43,10 +43,10 @@ defmodule GithubSearchWeb.Helper do
   ## Example
       iex> theme = "dark"
       iex> data = nil
-      iex> GithubSearchWeb.GithubSearchLive.icon_fill(data, theme)
+      iex> GithubSearchWeb.Helper.icon_fill(data, theme)
       "#5E6D85"
       iex> data = "Indonesia"
-      iex> GithubSearchWeb.GithubSearchLive.icon_fill(data, theme)
+      iex> GithubSearchWeb.Helper.icon_fill(data, theme)
       "#A0B2CE"
   """
   def icon_fill(data, theme) do
