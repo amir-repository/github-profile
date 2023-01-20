@@ -10,9 +10,26 @@ defmodule GithubSearchWeb.HelperTest do
   setup :verify_on_exit!
 
   test "Get user info based on given username" do
-    expect(GithubProfileMock, :profile, fn "a" -> %{username: "a"} end)
+    api_response = %{
+      name: "api_response",
+      username: "a",
+      avatar_url: "https://avatars.githubusercontent.com/u/1410106?v=4",
+      created_at: "5 Feb 2012",
+      bio: "",
+      public_repos: 26,
+      followers: 529,
+      following: 149,
+      location: "Ho Chi Minh, Vietnam",
+      blog: "http://anto.sh",
+      twitter_username: nil,
+      company: nil
+    }
 
-    assert %{username: "a"} = GithubProfileMock.profile("a")
+    expect(GithubProfileMock, :profile, fn "a" ->
+      api_response
+    end)
+
+    assert ^api_response = GithubProfileMock.profile("a")
   end
 
   test "Convert json to maps" do
