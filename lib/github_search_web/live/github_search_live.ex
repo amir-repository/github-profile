@@ -1,6 +1,6 @@
 defmodule GithubSearchWeb.GithubSearchLive do
   use GithubSearchWeb, :live_view
-  alias GithubSearchWeb.Helper
+  alias GithubSearch.Helper
 
   def helper, do: Application.get_env(:github_search, :helper)
 
