@@ -1,7 +1,6 @@
 <div
   x-data="{dark_theme: false}"
-  x-effect="dark_theme ? document.body.style.backgroundColor='#141C30' : document.body.style.backgroundColor='#F5F8FF'"
-  class={@theme}
+  x-effect="dark_theme ? (document.body.style.backgroundColor='#141C30', document.documentElement.classList.add('dark'), document.documentElement.classList.remove('white')) : (document.body.style.backgroundColor='#F5F8FF', document.documentElement.classList.add('white'), document.documentElement.classList.remove('dark'))"
 >
   <main class="p-6 md:w-[520px] lg:w-[720px] m-auto bg-[#F5F8FF] text-[#23262E] dark:bg-[#141C30] dark:text-[#FDFFFF]">
     <header>
