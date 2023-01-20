@@ -19,11 +19,15 @@ defmodule GithubSearchWeb.GithubSearchLiveTest do
     {:ok, view, _html} = live(conn, "/")
 
     username = "a"
+    name = "Shuvalov Anton"
+    joined = "Joined 5 Feb 2012"
 
     view
     |> form("form", %{username: username})
     |> render_submit()
 
+    assert has_element?(view, "#name", name)
     assert has_element?(view, "#username", username)
+    assert has_element?(view, "#joined", joined)
   end
 end

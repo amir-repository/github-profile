@@ -52,10 +52,10 @@
           <img src={@user.avatar_url} alt="" class="w-[96px] rounded-full lg:hidden" />
           <div class="profile-desc flex flex-col gap-2">
             <div>
-              <h2 id="username" class="text-lg font-bold"><%= @user.name %></h2>
-              <p class="mt-[-4px] text-blue-500"><%= @user.username %></p>
+              <h2 id="name" class="text-lg font-bold"><%= @user.name %></h2>
+              <p id="username" class="mt-[-4px] text-blue-500"><%= @user.username %></p>
             </div>
-            <p>Joined <%= @user.created_at %></p>
+            <p id="joined">Joined <%= @user.created_at %></p>
           </div>
         </div>
         <p class=" mt-8">
