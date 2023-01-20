@@ -37,7 +37,7 @@ defmodule GithubSearchWeb.GithubSearchLive do
 
   def handle_event("search_username", %{"username" => username}, socket) do
     user =
-      helper().user_search(username)
+      helper().profile(username)
       |> Map.put(:username, username)
 
     user = %{user | created_at: helper().format_time(user.created_at)}
