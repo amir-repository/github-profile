@@ -1,6 +1,4 @@
 defmodule GithubSearch.Helper do
-  alias GithubSearch.Helper.Client
-
   @http_client Application.get_env(:github_search, :http_client)
 
   def profile(username) do
