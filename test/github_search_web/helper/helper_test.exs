@@ -25,11 +25,11 @@ defmodule GithubSearchWeb.HelperTest do
       company: nil
     }
 
-    expect(GithubProfileMock, :profile, fn "a" ->
-      api_response
+    Mox.stub(GithubSearch.HelperMock, :http_get_profile, fn _url ->
+      {:ok, api_response}
     end)
 
-    assert ^api_response = GithubProfileMock.profile("a")
+    http_get_profile("a") == api_response
   end
 
   test "Convert json to maps" do

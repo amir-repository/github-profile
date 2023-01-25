@@ -1,4 +1,4 @@
 defmodule GithubSearch.ProfileBehaviour do
-  @type github_username :: String.t()
-  @callback profile(github_username()) :: map()
+  @callback http_get_profile(url :: String.t()) ::
+              {:ok, response :: map()} | {:error, reason :: term()}
 end
