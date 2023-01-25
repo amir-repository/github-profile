@@ -29,4 +29,4 @@ config :logger, level: :warn
 # Initialize plugs at runtime for faster test compilation
 config :phoenix, :plug_init_mode, :runtime
 
-config :github_search, :http_client, GithubSearch.HelperMock
+config :github_search, :http_client, GithubSearch.Helper.ClientMock

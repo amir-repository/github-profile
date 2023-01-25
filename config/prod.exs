@@ -49,4 +49,4 @@ config :logger, level: :info
 #
 # Check `Plug.SSL` for all available options in `force_ssl`.
 
-config :github_search, :http_client, GithubSearch.Helper
+config :github_search, :http_client, GithubSearch.Helper.Client

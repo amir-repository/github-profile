@@ -1,16 +1,12 @@
 defmodule GithubSearch.Helper do
+  alias GithubSearch.Helper.Client
+
   @http_client Application.get_env(:github_search, :http_client)
 
   def profile(username) do
     api_url = "https://api.github.com/users/"
     {:ok, result} = @http_client.http_get_profile(api_url <> username)
     decode_json(result.body)
-  end
-
-  @behaviour GithubSearch.ProfileBehaviour
-  @impl GithubSearch.ProfileBehaviour
-  def http_get_profile(url) do
-    HTTPoison.get(url)
   end
 
   @doc """

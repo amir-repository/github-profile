@@ -75,4 +75,4 @@ config :phoenix, :stacktrace_depth, 20
 # Initialize plugs at runtime for faster development compilation
 config :phoenix, :plug_init_mode, :runtime
 
-config :github_search, :http_client, GithubSearch.Helper
+config :github_search, :http_client, GithubSearch.Helper.Client
