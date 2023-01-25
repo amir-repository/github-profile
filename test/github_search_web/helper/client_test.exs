@@ -2,7 +2,6 @@ defmodule GithubSearchWeb.Helper.ClientTest do
   use ExUnit.Case, async: true
 
   import GithubSearch.Helper
-  import GithubSearch.Helper.Client
 
   import Mox
 
